@@ -4,10 +4,10 @@ Question 3: A, C, and D
 
 Question 4a) in IMAGEq4
 b)
-c)
+c) N
 
 Question 5a)
-b) 5
+b) 5 or N
 
 6) push_back, pop_back, insert, or erase invalidates all iterators because when we use those functions, the vector grows and allocates to a new bigger
 array if the current vector runs out of space, and deletes the old vector.

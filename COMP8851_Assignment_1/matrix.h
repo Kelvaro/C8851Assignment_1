@@ -36,8 +36,20 @@ class matrix
       { return array.size( ); }
     int numcols( ) const
       { return numrows( ) ? array[ 0 ].size( ) : 0; }
+	
+	
+	
+	
+	///////////////
+	// Question 2//
+	///////////////
+	void matrix {
+		array = {};
 
-	void resize(); // Question 2
+	};
+
+	resize() {
+	}
 
   private:
     vector<vector<Object>> array;

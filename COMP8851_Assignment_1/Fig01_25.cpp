@@ -2,92 +2,125 @@
 #include <vector>
 #include <string>
 #include <string.h>
+
 using namespace std;
 
 // Generic findMax, with a function object, C++ style.
 // Precondition: a.size( ) > 0.
-template <typename GetLength, typename Comparator>
-const GetLength & findMaxLength( const vector<GetLength> & length, Comparator isLessThan )
+template <typename Object, typename Comparator>
+const Object & findMax( const vector<Object> & area, Comparator isLessThan )
 {
     int maxIndex = 0;
 
-    for( int i = 1; i < length.size( ); ++i )
-        if( isLessThan( length[ maxIndex ], length[ i ] ) )
+    for( int i = 1; i < area.size( ); ++i )
+        if( isLessThan( area[ maxIndex ], area[ i ] ) )
             maxIndex = i;
 
-    return length[ maxIndex ];
+    return area[ maxIndex ];
 }
 
 // Generic findMax, using default ordering.
 #include <functional>
-template <typename GetLength>
-const GetLength & findMaxLength( const vector<GetLength> & arr )
+template <typename Object>
+const Object & findMax( const vector<Object> & arr )
 {
-    return findMaxLength( arr, less<GetLength>{ } );
+    return findMax( arr, less<Object>{ } );
 }
 
 
-template <typename GetWidth, typename Comparator>
-const GetWidth & findMaxWidth(const vector<GetWidth> & width, Comparator isLessThan)
-{
-	int maxIndex = 0;
-
-	for (int i = 1; i < width.size(); ++i)
-		if (isLessThan(width[maxIndex], width[i]))
-			maxIndex = i;
-
-	return width[maxIndex];
-}
-
-template <typename GetWidth>
-const GetWidth & findMaxWidth(const vector<GetWidth> & width)
-{
-	return findMaxWidth(width, less<GetWidth>{ });
-}
 
 
 
 //////////////
 //QUESTION 1//
 //////////////
-/*
+class rectangle {
+
+public:
+	rectangle(int l, int w);
+		int length;
+		int width;
+	
+	int area;
+	int parameter;
+	
+	int getWidth() {
+		return width;
+	}
+
+	int getLength() {
+		return length;
+	}
+
+	int getArea() {
+		return (length * width);
+	}
+
+	int getParameter() {
+		return (2 * (length + width));
+	}
+	
+	
+private:
+	
+};
+
+rectangle::rectangle(int l, int w)
+{
+	length = l;
+	width = w;
+	area = length * width;
+	parameter = (2 * (length + width));
+}
+
 int main( )
 {
-	vector<int> Length = { 6, 4, 2, 5, 3 };
-	vector<int> Width = { 3, 1, 9, 2, 4 };
+	vector<rectangle>Boxes;
+	vector<int> length{3,6,1};
+	vector<int> width{7,2,5};
+	vector<int> area;
+	vector<int> parameter;
+	for (int i = 0; i < 2; i++) {
+		rectangle r(length[i],width[i]);
 
-   
-    cout << findMaxLength( Length ) << endl;
-	cout << findMaxLength(Width) << endl;
-	cout << findMaxLength(Length) * findMaxLength(Width) << endl;
-	cout << 2 * findMaxLength(Width) + 2 * findMaxLength(Length) << endl;
-    return 0;
-
-
-	int a = 0;
-
-	while (a != 10) {
-	
-		cout << a << endl;
-		a++;
+		Boxes.push_back(r);
+		area.push_back(r.getArea());
+		parameter.push_back(r.getParameter());
+		
 	}
+	cout <<"I have " << Boxes.size()<< " boxes" << endl;
+	//cout << findMax(area) << endl;
+	//cout << "area of this rectangle is: " <<Boxes[1].getArea()<< endl;
+	cout <<"Box: " <<"has the highest area with an area of: "<< findMax(area) << endl;
+	cout <<"Box: " <<"has the highest parameter with a parameter of: "<<findMax(parameter) << endl;
+	
+
+	return 0;
+ 
+	
 }
-*/
+
+
+
 
 
 //////////////
 //QUESTION 8//
 //////////////
 
+/*
 int main( )
 {
 	int a = 0;
 
 	while (a != 10) {
-	
+
 		cout << a << endl;
 		a++;
 	}
 	return 0;
 }
+*/
 
+
+/////// first iteration for number 4.
