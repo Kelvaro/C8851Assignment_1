@@ -119,6 +119,7 @@
   <ItemGroup>
     <ClCompile Include="Fig01_25.cpp" />
     <ClCompile Include="Joseph.cpp" />
+    <ClCompile Include="PostfixEvaluation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matrix.h" />

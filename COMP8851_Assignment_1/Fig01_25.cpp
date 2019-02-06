@@ -72,7 +72,7 @@ rectangle::rectangle(int l, int w)
 	area = length * width;
 	parameter = (2 * (length + width));
 }
-
+/*
 int main( )
 {
 	vector<rectangle>Boxes;
@@ -99,7 +99,7 @@ int main( )
  
 	
 }
-
+*/
 
 
 
