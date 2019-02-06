@@ -72,6 +72,13 @@ rectangle::rectangle(int l, int w)
 	area = length * width;
 	parameter = (2 * (length + width));
 }
+
+//////////////
+//QUESTION 1//
+//////////////
+
+
+
 /*
 int main( )
 {
@@ -104,23 +111,13 @@ int main( )
 
 
 
-//////////////
-//QUESTION 8//
-//////////////
-
-/*
-int main( )
-{
-	int a = 0;
-
-	while (a != 10) {
-
-		cout << a << endl;
-		a++;
-	}
-	return 0;
-}
-*/
+///////////////
+//QUESTION 4a//
+///////////////
 
 
-/////// first iteration for number 4.
+/////// first iteration: 3 * 0 + 4 = 4
+/////// second iteration: 3 * 4 + 8 = 20
+/////// third iteration: 3* 20 + 0 = 60
+/////// fourth iteration: 3* 60 + 1 = 181
+/////// fifth iteration: 3* 181 + 2 = 545
